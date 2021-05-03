@@ -1,9 +1,9 @@
 html {
     align-items: center;
-    background-color: #1a2026;
+    background-color: #131a21;
     color: #ffffff;
     display: flex;
-    font: 18px/1 "FiraCode Nerd Font Mono";
+    font: 18px/1 "FiraCode Nerd Font";
     height: 100%;
     justify-content: center;
 }
