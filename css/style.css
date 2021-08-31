@@ -1,6 +1,6 @@
 html {
     align-items: center;
-    background-color: #131a21;
+    background-color: #10171E;
     color: #ffffff;
     display: flex;
     font: 18px/1 "Sarasa Mono K";
@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    background-color: #10171E;
+    background-color: #29343d;
     box-shadow: 0px 0px 9px #1d1f2187;
     border-radius: 6px;
     color: #ffffff;
