@@ -1,18 +1,42 @@
 :root {
     --border-radius: 10px;
     --font-size: 18px;
-    --image-size: calc(3 * var(--font-size))
+    /* Idk how to compute height of .links */
+    --image-size: calc(254px + 2 * 3 * var(--font-size));
+    --font-family: "Iosevka", monospace;
+    --column-gap: 100px;
+}
+
+@font-face {
+    font-family: "Iosevka Nerd Font";
+    src: url("/fonts/Iosevka\ Nerd\ Font\ Complete.ttf");
+}
+
+@media (prefers-color-scheme: light) {
+    .links {
+        background-color: #F0F0F0;
+        color: #1C1C1C;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        background-color: #FFF;
+        color: #1C1C1C;
+    }
+    .links {
+        background-color: #F0F0F0;
+        color: #1C1C1C;
+    }
 }
 
 html {
-    background-color: #FFF;
-    color: #1C1C1C;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Iosevka", monospace;
+    font-family: var(--font-family);
     font-size: var(--font-size);
-    line-height: 1.8em;
+    line-height: 1.5em;
     height: 100%;
 }
 
@@ -23,9 +47,7 @@ body {
 }
 
 .links {
-    background-color: #F0F0F0;
     box-shadow: 0px 0px 9px 1px #C0C0C0;
-    color: #1C1C1C;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,11 +59,11 @@ body {
 }
 
 .group1 {
-    color: khaki;
+    color: forestgreen;
 }
 
 .group2 {
-    color: lawngreen;
+    color: indigo;
 }
 
 .group3 {
@@ -49,11 +71,11 @@ body {
 }
 
 .group4 {
-    color: maroon;
+    color: mediumvioletred;
 }
 
 ul {
-    width: 100px;
+    width: var(--column-gap);
 }
 
 p {
@@ -61,21 +83,27 @@ p {
 }
 
 .search-icon {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .search-box,
 form {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.image {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
 }
 
 img {
-    display: block;
-    max-width: var(--image-size);
-    max-height: 100%;
-    width: auto;
-    height: auto;
+    width: 250%;
+    height: var(--image-size);
     border-radius: var(--border-radius);
     box-shadow: 0px 0px 9px 1px #303030;
 }
