@@ -3,30 +3,66 @@
     --font-size: 18px;
     /* Idk how to compute height of .links */
     --image-size: calc(254px + 2 * 3 * var(--font-size));
-    --font-family: "Iosevka", monospace;
+    --font-family: "Iosevka", "Iosevka Nerd Font", monospace;
     --column-gap: 100px;
 }
 
 @font-face {
-    font-family: "Iosevka Nerd Font";
-    src: url("/fonts/Iosevka\ Nerd\ Font\ Complete.ttf");
+    font-family: "Iosevka Nerd Font Chrome";
+    font-weight: normal;
+    font-style: normal;
+    src: url("chrome-extension://__MSG_@@extension_id__/fonts/Iosevka Nerd Font Complete.ttf");
 }
 
 @media (prefers-color-scheme: light) {
     .links {
-        background-color: #F0F0F0;
-        color: #1C1C1C;
+        background-color: #f9f9f9;
+        color: black;
+        box-shadow: 0px 0px 9px 1px #f0f0f0;
+    }
+    html {
+        background-color: #cdcdcd;
+    }
+    input {
+        color: black;
+    }
+    .group1 {
+        color: #e50e0e;
+    }
+    .group2 {
+        color: #065fcd;
+    }
+    .group3 {
+        color: #a727d1;
+    }
+    .group4 {
+        color: #82BA7F;
     }
 }
 
 @media (prefers-color-scheme: dark) {
-    html {
-        background-color: #FFF;
-        color: #1C1C1C;
-    }
     .links {
-        background-color: #F0F0F0;
-        color: #1C1C1C;
+        background-color: #424242;
+        color: #e9e9e9;
+        box-shadow: 0px 0px 9px 1px #505050;
+    }
+    html {
+        background-color: #35363a;
+    }
+    input {
+        color: #e9e9e9;
+    }
+    .group1 {
+        color: #eb7373;
+    }
+    .group2 {
+        color: #6ee5f1;
+    }
+    .group3 {
+        color: #ea84ee;
+    }
+    .group4 {
+        color: #82BA7F;
     }
 }
 
@@ -47,7 +83,6 @@ body {
 }
 
 .links {
-    box-shadow: 0px 0px 9px 1px #C0C0C0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -58,20 +93,11 @@ body {
     margin-right: 40px;
 }
 
-.group1 {
-    color: forestgreen;
-}
-
-.group2 {
-    color: indigo;
-}
-
-.group3 {
-    color: lightsalmon;
-}
-
+.group1,
+.group2,
+.group3,
 .group4 {
-    color: mediumvioletred;
+    font-weight: bold;
 }
 
 ul {
