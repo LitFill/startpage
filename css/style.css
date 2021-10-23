@@ -1,7 +1,7 @@
 :root {
     --border-radius: 10px;
     --font-size: 18px;
-    --image-size: calc(3 * var(--font-size) + 200px)
+    --image-size: calc(3 * var(--font-size) +)
 }
 
 html {
