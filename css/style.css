@@ -3,7 +3,7 @@
     --font-size: 18px;
     /* Idk how to compute height of .links */
     --image-size: calc(254px + 2 * 3 * var(--font-size));
-    --font-family: "Iosevka Nerd Font", "Comic Sans";
+    --font-family: "Iosevka", "Iosevka Nerd Font", "Comic Sans";
     --column-gap: 100px;
 }
 
