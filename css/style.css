@@ -3,12 +3,12 @@
     --font-size: 18px;
     /* Idk how to compute height of .links */
     --image-size: calc(254px + 2 * 3 * var(--font-size));
-    --font-family: "Iosevka", "Iosevka Nerd Font", monospace;
+    --font-family: "Iosevka Nerd Font", "Comic Sans";
     --column-gap: 100px;
 }
 
 @font-face {
-    font-family: "Iosevka Nerd Font Chrome";
+    font-family: "Iosevka Nerd Font";
     font-weight: normal;
     font-style: normal;
     src: url("chrome-extension://__MSG_@@extension_id__/fonts/Iosevka Nerd Font Complete.ttf");
@@ -71,6 +71,7 @@ html {
     align-items: center;
     justify-content: center;
     font-family: var(--font-family);
+    font-display: swap;
     font-size: var(--font-size);
     line-height: 1.5em;
     height: 100%;
@@ -80,6 +81,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font: inherit;
 }
 
 .links {
