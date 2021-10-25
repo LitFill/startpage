@@ -1,8 +1,6 @@
 :root {
     --border-radius: 10px;
     --font-size: 18px;
-    /* Idk how to compute height of .links */
-    --image-size: calc(308px + 2 * 3 * var(--font-size));
     --font-family: "Iosevka", "Comic Sans";
     --column-gap: 100px;
 }
@@ -74,6 +72,7 @@ html {
     font-size: var(--font-size);
     line-height: 1.5em;
     height: 100%;
+    user-select: none;
 }
 
 body {
@@ -91,13 +90,10 @@ body {
     min-height: 15ch;
     min-width: 30px;
     padding: 3em;
-    margin-right: 40px;
+    margin-right: 30px;
 }
 
-.group1,
-.group2,
-.group3,
-.group4 {
+li[class^="group"] {
     font-weight: bold;
 }
 
@@ -107,10 +103,6 @@ ul {
 
 p {
     margin: 0;
-}
-
-.search-icon {
-    font-size: 20px;
 }
 
 .search-box,
@@ -124,14 +116,16 @@ form {
 .image {
     margin: 0;
     padding: 0;
-    height: 100%;
-    display: flex;
+    border: 0;
 }
 
 img {
     width: 300px;
+    /* height: var(--image-size); */
+    height: 0;
     object-fit: cover;
-    height: var(--image-size);
+    padding: inherit;
+    margin: inherit;
     border-radius: var(--border-radius);
     /* box-shadow: 0px 0px 9px 1px #f0f0f0; */
 }

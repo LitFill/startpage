@@ -1,0 +1,1 @@
+document.getElementById("image").style.height = document.getElementById("links").offsetHeight + "px";

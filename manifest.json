@@ -3,6 +3,7 @@
     "description": "Overrides the new tab page",
     "version": "1.0",
     "incognito": "split",
+    "content_security_policy": "index.html 'self' 'sha256-+XcoJqw21zCfArlGrhb3fZhZv21afKEA3/cgjVJ7EvU='",
     "icons": {
         "16": "extension_icons/icon16.png"
     },
