@@ -3,15 +3,8 @@
     --font-size: 18px;
     /* Idk how to compute height of .links */
     --image-size: calc(254px + 2 * 3 * var(--font-size));
-    --font-family: "Iosevka", "Iosevka Nerd Font", "Comic Sans";
+    --font-family: "Iosevka", "Comic Sans";
     --column-gap: 100px;
-}
-
-@font-face {
-    font-family: "Iosevka Nerd Font";
-    font-weight: normal;
-    font-style: normal;
-    src: url("chrome-extension://__MSG_@@extension_id__/fonts/Iosevka Nerd Font Complete.ttf");
 }
 
 @media (prefers-color-scheme: light) {

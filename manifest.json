@@ -3,8 +3,12 @@
     "description": "Overrides the new tab page",
     "version": "1.0",
     "incognito": "split",
+    "web_accessible_resources": [
+        "css/style.css",
+        "fonts/*.*"
+    ],
     "chrome_url_overrides": {
-      "newtab": "index.html"
+        "newtab": "index.html"
     },
     "manifest_version": 2
-  }
+}
