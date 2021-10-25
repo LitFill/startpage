@@ -3,10 +3,9 @@
     "description": "Overrides the new tab page",
     "version": "1.0",
     "incognito": "split",
-    "web_accessible_resources": [
-        "css/style.css",
-        "fonts/*.*"
-    ],
+    "icons": {
+        "16": "extension_icons/icon16.png"
+    },
     "chrome_url_overrides": {
         "newtab": "index.html"
     },
