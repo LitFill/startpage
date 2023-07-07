@@ -60,7 +60,7 @@
     }
 
     img {
-        content: url(repo-assets/img-dark.jpg);
+        src: url('repo-assets/img-dark.jpg');
     }
 
     .group1 {
