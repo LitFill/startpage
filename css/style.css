@@ -211,3 +211,38 @@ p #cursor {
         opacity: 1;
     }
 }
+
+.links {
+    /* Remove the fixed width and margin-right */
+    width: 100%;
+    margin-right: 0;
+}
+
+@media (min-width: 768px) {
+    /* Add a media query for desktop screens */
+    .links {
+        width: auto;
+        margin-right: 30px;
+    }
+
+    img {
+        width: 380px;
+        height: auto;
+    }
+}
+
+/* Adjustments for mobile screens */
+@media (max-width: 767px) {
+    .links {
+        padding: 1em;
+    }
+
+    ul {
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
