@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <style>
+        body {
+            background-color: #222;
+            color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+
+        #div {
+            width: 300px;
+            height: 300px;
+            background-color: #00ff2a; /* Warna latar belakang */
+            color: #790a0a; /* Warna teks */
+            border-radius: 50%; /* Mengubah bentuk menjadi lingkaran */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 100px;
+            position: relative;
+        }
+
+        #p {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+        }
+    </style>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <p id="p">Ini jumlahnya:</p>
+    <br>
+    <div id="div"></div>
+
+    <script>
+        document.getElementById('div').innerText = result2;
+    </script>
+</body>
+
+</html>
