@@ -192,6 +192,28 @@ footer {
     text-align: center;
 }
 
+a.rozy:hover {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #fffb0085;
+}
+
+p.home {
+    color: #e5c890;
+}
+
+span.jam {
+    color: #e78284;
+}
+
+span.menit {
+    color: #a6d189;
+}
+
+span.detik {
+    color: #8caaee;
+}
+
 @keyframes blink {
     0% {
         opacity: 0;

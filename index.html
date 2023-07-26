@@ -10,7 +10,9 @@
 
 <body>
     <div id="links" class="links">
-        <p>~</p>
+        <p class="home">~
+            <span class="jam"></span>:<span class="menit"></span>:<span class="detik"></span>
+        </p>
         <p class="refresh" style="cursor: pointer;">
             <span class="prompt"> ❯❯❯ </span>ls <span class="or">||</span> dir
         </p>
@@ -41,7 +43,7 @@
                 <li><a href="https://chat.openai.com/" target="_blank">Chat GPT</a></li>
             </ul>
         </nav>
-        <p>~</p>
+        <p class="home">~</p>
         <div class="search-box">
             <span class="prompt"> ❯❯❯ </span>
             <form action="https://www.google.com/search">
@@ -54,8 +56,21 @@
     <img id="image" class="image">
 
     <footer>
-        <p class="p-footer">Copyright &copy; Rozy 2023</p>
+        <p class="p-footer">Copyright &copy; <a href="https://github.com/LitFill/" target="_blank" class="rozy">Rozy</a>
+            2023</p>
     </footer>
+
+    <script>
+        document
+            .querySelector(".refresh")
+            .addEventListener("click", () => location.reload());
+
+        const date = new Date();
+
+        document.querySelector(".jam").innerHTML = date.getHours();
+        document.querySelector(".menit").innerHTML = date.getMinutes();
+        document.querySelector(".detik").innerHTML = date.getSeconds();
+    </script>
 
 </body>
 
