@@ -1,5 +1,4 @@
-const myArray = [
-    "NZ",
+"NZ",
     "MNR",
     "FDL",
     "MSH",
@@ -730,9 +729,4 @@ const myArray = [
     "ABD",
     "HS",
     "AND",
-    "HLY",
-];
-
-console.log([...new Set(myArray)]);
-
-// document.body.onkeydown((e) => console.log(e));
+    "HLY";

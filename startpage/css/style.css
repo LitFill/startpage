@@ -4,7 +4,7 @@
 :root {
     --border-radius: 10px;
     --font-size: 18px;
-    --font-family: 'Fira Code', monospace;
+    --font-family: "Fira Code", monospace;
     --column-gap: 100px;
 }
 
@@ -33,7 +33,7 @@
         color: #a727d1;
     }
     .group4 {
-        color: #82BA7F;
+        color: #82ba7f;
     }
 }
 
@@ -62,7 +62,7 @@
         color: #ea84ee;
     }
     .group4 {
-        color: #82BA7F;
+        color: #82ba7f;
     }
 }
 
@@ -135,7 +135,7 @@ img {
 
 span.prompt,
 span.search-icon {
-    color: #82BA7F;
+    color: #82ba7f;
 }
 
 input {
@@ -182,6 +182,14 @@ p #cursor {
 
 .or {
     color: rgba(226, 3, 3, 0.822);
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
 }
 
 @keyframes blink {
