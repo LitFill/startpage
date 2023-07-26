@@ -5,4 +5,4 @@ It even has dark mode!
 
 ![Showcase](repo-assets/preview-2.png)
 
-## Repo untuk startpage pribadi milikku yang ku fork dari startpage milik [robzyy](robzyy.github.io/startpage/)
+## Repo untuk startpage pribadi milikku yang ku fork dari startpage milik [robzyy](https://robzyy.github.io/startpage/)
