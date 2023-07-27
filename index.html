@@ -61,15 +61,31 @@
     </footer>
 
     <script>
-        document
-            .querySelector(".refresh")
-            .addEventListener("click", () => location.reload());
+        // Menggunakan variabel untuk menyimpan referensi ke elemen yang diakses lebih dari sekali
+        const refreshElem = document.querySelector(".refresh");
+        const jamElem = document.querySelector(".jam");
+        const menitElem = document.querySelector(".menit");
+        const detikElem = document.querySelector(".detik");
 
-        const date = new Date();
+        // Menggunakan fungsi arrow dengan fitur single-line jika hanya satu pernyataan
+        refreshElem.addEventListener("click", () => location.reload());
 
-        document.querySelector(".jam").innerHTML = date.getHours();
-        document.querySelector(".menit").innerHTML = date.getMinutes();
-        document.querySelector(".detik").innerHTML = date.getSeconds();
+        // Mengoptimalkan pemformatan waktu dengan menggunakan fungsi tambahan
+        function formatTimeValue(value) {
+            return value < 10 ? "0" + value : value;
+        }
+
+        // Mengupdate jam secara periodik setiap detik
+        function updateClock() {
+            const date = new Date();
+            jamElem.innerHTML = date.getHours();
+            menitElem.innerHTML = formatTimeValue(date.getMinutes());
+            detikElem.innerHTML = formatTimeValue(date.getSeconds());
+        }
+
+        // Memanggil fungsi untuk pertama kali dan selanjutnya secara periodik setiap 5 detik
+        updateClock();
+        setInterval(updateClock, 5000);
     </script>
 
 </body>
