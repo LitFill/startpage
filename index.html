@@ -139,8 +139,13 @@
             const jamElem = document.querySelector(".jam");
             const menitElem = document.querySelector(".menit");
             const detikElem = document.querySelector(".detik");
+            const seacrBox = document.querySelector(".search-box");
 
             refreshElem.addEventListener("click", () => location.reload());
+            seacrBox.addEventListener("submit", () => clearInput());
+
+            updateClock();
+            setInterval(updateClock, 5000);
 
             function formatTimeValue(value) {
                 return value < 10 ? "0" + value : value;
@@ -153,8 +158,12 @@
                 detikElem.innerHTML = formatTimeValue(date.getSeconds());
             }
 
-            updateClock();
-            setInterval(updateClock, 5000);
+            function clearInput() {
+                const timeOut = setTimeout(() => {
+                    const input = document.getElementById("q");
+                    input.value = "";
+                }, 1000);
+            }
         </script>
     </body>
 
