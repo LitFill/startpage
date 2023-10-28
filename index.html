@@ -152,22 +152,64 @@
         </footer>
 
         <script>
+            /**
+             * Mengambil elemen refresh dari DOM
+             * @type {HTMLElement}
+             */
             const refreshElem = document.querySelector(".refresh");
+            /**
+             * Mengambil elemen jam dari DOM
+             * @type {HTMLElement}
+             */
             const jamElem = document.querySelector(".jam");
+            /**
+             * Mengambil elemen menit dari DOM
+             * @type {HTMLElement}
+             */
             const menitElem = document.querySelector(".menit");
+            /**
+             * Mengambil elemen detik dari DOM
+             * @type {HTMLElement}
+             */
             const detikElem = document.querySelector(".detik");
+            /**
+             * Mengambil elemen search box dari DOM
+             * @type {HTMLElement}
+             */
             const seacrBox = document.querySelector(".search-box");
 
+            /**
+             * Menambahkan event listener pada elemen refresh untuk melakukan refresh halaman
+             */
             refreshElem.addEventListener("click", () => location.reload());
+
+            /**
+             * Menambahkan event listener pada search box untuk membersihkan input
+             */
             seacrBox.addEventListener("submit", () => clearInput());
 
+            /**
+             * Memanggil fungsi update jam
+             */
             updateClock();
+
+            /**
+             * Membuat interval update jam setiap 5 detik
+             */
             setInterval(updateClock, 5000);
 
+            /**
+             * Fungsi untuk memformat waktu
+             * @param {number} value - Nilai yang akan diformat
+             * @return {string} - Nilai yang sudah diformat, jika nilai kurang dari 10 tambah 0 di depan
+             */
             function formatTimeValue(value) {
                 return value < 10 ? "0" + value : value;
             }
 
+            /**
+             * Fungsi untuk mengupdate jam
+             */
             function updateClock() {
                 const date = new Date();
                 jamElem.innerHTML = date.getHours();
@@ -175,6 +217,9 @@
                 detikElem.innerHTML = formatTimeValue(date.getSeconds());
             }
 
+            /**
+             * Fungsi untuk membersihkan input pada search box setelah 1 detik
+             */
             function clearInput() {
                 const timeOut = setTimeout(() => {
                     const input = document.getElementById("q");
