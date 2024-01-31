@@ -192,7 +192,7 @@ footer {
     text-align: center;
 }
 
-a.rozy:hover {
+a.rozy:hover, a.rozy:focus, a.link:hover, a.link:focus {
     font-weight: bold;
     text-decoration: underline;
     color: #fffb0085;
