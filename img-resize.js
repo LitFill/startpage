@@ -1,7 +1,23 @@
-document.getElementById("image").style.height = document.getElementById("links").offsetHeight + "px";
-document.querySelector('.refresh').addEventListener('click', () => location.reload());
+/**
+ * Set the height of the image equal to the offsetHeight of the links element
+ * @type {string}
+ */
+document.getElementById("image").style.height =
+    document.getElementById("links").offsetHeight + "px";
 
-// const linksElement = document.getElementById("links");
-// const linksHeight = linksElement.offsetHeight;
+/**
+ * Elements with the .links class
+ * @type {HTMLElement}
+ */
+const linksElement = document.getElementById("links");
 
-// console.log(linksHeight);
+/**
+ * The height of the linksElement
+ * @type {number}
+ */
+const linksHeight = linksElement.offsetHeight;
+
+/**
+ * Logs the height of the linksElement in the console
+ */
+console.log(linksHeight);
