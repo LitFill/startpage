@@ -6,13 +6,13 @@ document.getElementById("image").style.height =
     document.getElementById("links").offsetHeight + "px";
 
 /**
- * Elements with the .links class
+ * Elements with the `#links` id
  * @type {HTMLElement}
  */
 const linksElement = document.getElementById("links");
 
 /**
- * The height of the linksElement
+ * The height of the `linksElement`
  * @type {number}
  */
 const linksHeight = linksElement.offsetHeight;

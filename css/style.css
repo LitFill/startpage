@@ -14,24 +14,31 @@
         color: black;
         /* box-shadow: 0px 0px 9px 1px #f0f0f0; */
     }
+
     html {
         background-color: #f7f7f7;
     }
+
     input {
         color: black;
     }
+
     img {
         content: url(https://lh3.googleusercontent.com/pw/AIL4fc862NPSq79DU5_7hoTcWEXUj4VSQ3xLVYbg_mHbDxPAHSunSm8N8bT7x1_LVNm6-u2R4zEwvi7dRHObVH_5AG87V4rZaZtdqvZlJxFYmYvJPdpZTbgYObR-10I0wONitJcfx0tpy9ef05ysX2pBWudvz-9jSdwhjDsvR7vxrsyvQ31Y4LZ-vMPBG30KhvHZ5xPyO3O5MnU1QrmrMAkxW1oKs8lif9XvI-7vjrAv2hL5DpDgy2ijmECH2MgGd-ITuAkQntLCxZgHBSFTvuOGEB61gw-4eZhPcg5Lfm5zCmTKqmYNRoBVpAuPiUttPijWCULhV6XqFEO9tAKQfMqatHXjtAPCyro4cuLwUh41hA_p1gM44TFdFdwi3JvHMRKtWgvQF_5fNQ2-Ij7kXOIQfuQ-s19cEozZYZbEDYcrPLvt7WsoF1FYKvoCFL-c5VHkBCh5MS5j9QtF9iaA_11uDsS_8f9fiANajTDUkfa0Mrnm5rd9NeBeIZqnuHn4zYpNrVlm8FU7Uin9LlWGRZUAjd53dR49IRQ8FbmdIBvl58BLhuKgC9JMyJ3PnCwiO9lPfz5dSpHaIH9fgFtabTqBdtWN4b0sCSeXFtuw4dshRj_gpWy6rN6hGjpqIKVAPWJ-TrbOa-1xZ9pkTyiYvEs5bp8cHWIimk3uzhFQ_DID3Oj5n547JpwK0ZyeFDmWy__zeCdegeKnVq56qCQmT2oPXWK6TzQVmr6w3CjUYFJ_CVCbvyf8-HSgb8L5DEWwLow0cJuBfAYQsvx5mdAIC0nMLvhT6Li3w-d80cIvBSI0oJZdPAh9JjPoTGX_u-XMT_k7cQrp_YfxA8tQvVk-tHAf7DCUSz4SiIg5cCmd0JKnxyUk8Ajnx2gwZHRg-L1pSO0yR_ds4_d5sKBJOLTfMQlIdGk=w1080-h810-s-no?authuser=0);
     }
+
     .group1 {
         color: #e50e0e;
     }
+
     .group2 {
         color: #065fcd;
     }
+
     .group3 {
         color: #a727d1;
     }
+
     .group4 {
         color: #82ba7f;
     }
@@ -43,24 +50,31 @@
         color: #e9e9e9;
         box-shadow: 0px 0px 9px 1px #505050;
     }
+
     html {
         background-color: #35363a;
     }
+
     input {
         color: #e9e9e9;
     }
+
     img {
         content: url(../repo-assets/img-dark.jpg);
     }
+
     .group1 {
         color: #eb7373;
     }
+
     .group2 {
         color: #6ee5f1;
     }
+
     .group3 {
         color: #ea84ee;
     }
+
     .group4 {
         color: #82ba7f;
     }
@@ -192,10 +206,14 @@ footer {
     text-align: center;
 }
 
-a.rozy:hover, a.rozy:focus, a.link:hover, a.link:focus {
+a.rozy:hover,
+a.rozy:focus,
+a.link:hover,
+a.link:focus {
     font-weight: bold;
     text-decoration: underline;
-    color: #fffb0085;
+    /* color: #fffb0085; */
+    color: #dc87f5;
 }
 
 p.home {
@@ -218,9 +236,11 @@ span.detik {
     0% {
         opacity: 0;
     }
+
     49% {
         opacity: 0;
     }
+
     50% {
         opacity: 1;
     }
