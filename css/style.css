@@ -293,3 +293,69 @@ span.detik {
     opacity: 1;
   }
 }
+
+/* ── Responsive ── */
+@media (max-width: 1023px) {
+  .links {
+    padding: 2em;
+    min-height: unset;
+    margin-right: 0;
+  }
+
+  body {
+    flex-direction: column;
+  }
+
+  img {
+    width: min(90vw, 500px);
+    max-height: 200px;
+    object-fit: cover;
+    object-position: top;
+    height: auto;
+  }
+
+  nav {
+    column-gap: 2em;
+    grid-template-columns: auto auto;
+    padding: 1em 0;
+  }
+
+  ul {
+    width: auto;
+  }
+
+  footer {
+    position: relative;
+    padding: 16px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size: 15px;
+    --column-gap: auto;
+  }
+
+  .links {
+    padding: 1.5em 1.2em;
+    min-height: unset;
+    border-radius: 10px;
+  }
+
+  nav {
+    column-gap: 1.2em;
+    grid-template-columns: auto auto;
+    padding: 0.8em 0;
+  }
+
+  a {
+    padding: 6px 0;
+    display: inline-block;
+  }
+
+  img {
+    width: 100vw;
+    max-height: 140px;
+    border-radius: 0;
+  }
+}
