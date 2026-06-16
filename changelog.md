@@ -1,3 +1,35 @@
+## v2.0 — Catppuccin overhaul
+
+feat: Complete Catppuccin theme with dark/light toggle
+- Catppuccin Mocha as default dark theme, Catppuccin Latte as light
+- Theme toggle button (🌙/☀️) with localStorage persistence
+- Dark mode by default, class-based CSS variables
+
+feat: Restructure navigation links
+- New "~/lalamos" category: ChatGPT, Gemini, Claude, OpenRouter
+- Merged DeepL Write + Translator into single "DeepL" link
+- Removed Phind and Osu! entries
+
+feat: Add favicon — Nakiri Ayame (Hololive) chibi sticker
+
+feat: Light mode background image (repo-assets/img-light.jpg)
+
+fix: Footer visibility in dark mode (use var(--links-color))
+fix: Category group colors properly applied via CSS selectors
+fix: Remove text-shadow glow on nav link hover
+fix: img-resize.js placement (was outside <body>)
+fix: Invalid ::root → :root (cosmetic, no-op)
+fix: Telegram target="_blank" typo (extra space)
+
+style: Glassmorphism panel (backdrop-filter blur)
+style: Clean nav link hover (opacity: 0.65, no glow)
+style: Gradient backgrounds for both themes
+style: All colors via CSS variables for single-point theming
+
+---
+
+## v1.0
+
 feat: Enhance link styling in CSS
 
 - Increase the interactivity for the 'rozy' class by applying bold font weight and underline on hover and focus.

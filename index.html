@@ -3,6 +3,7 @@
     <head>
         <title>/home</title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="icon" type="image/png" href="extension_icons/icon16.png" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
@@ -13,6 +14,7 @@
                 ~ <span class="jam"></span>:<span class="menit"></span>:<span
                     class="detik"
                 ></span>
+                <span class="toggle-theme" title="Toggle theme">🌙</span>
             </p>
             <p class="refresh" style="cursor: pointer">
                 <span class="prompt"> ❯❯❯ </span>ls
@@ -28,16 +30,7 @@
                         <a href="https://github.com/" target="_blank">GitHub</a>
                     </li>
                     <li>
-                        <a href="https://www.deepl.com/write/" target="_blank"
-                            >DeepL Write</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://www.deepl.com/translator/"
-                            target="_blank"
-                            >DeppL Translator</a
-                        >
+                        <a href="https://www.deepl.com/" target="_blank">DeepL</a>
                     </li>
                 </ul>
                 <ul>
@@ -50,7 +43,7 @@
                     <li>
                         <a
                             href="https://web.telegram.org/a/#1386684978"
-                            target=" _blank"
+                            target="_blank"
                             >Telegram</a
                         >
                     </li>
@@ -107,21 +100,18 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="group4">~/misc</li>
+                    <li class="group4">~/lalamos</li>
                     <li>
-                        <a href="https://chat.openai.com/" target="_blank"
-                            >Chat GPT</a
-                        >
+                        <a href="https://chatgpt.com/" target="_blank">ChatGPT</a>
                     </li>
                     <li>
-                        <a href="https://phind.com/" target="_blank">Phind</a>
+                        <a href="https://gemini.google.com/" target="_blank">Gemini</a>
                     </li>
                     <li>
-                        <a
-                            href="https://osu.ppy.sh/users/24493339"
-                            target="_blank"
-                            >Osu!</a
-                        >
+                        <a href="https://claude.ai/" target="_blank">Claude</a>
+                    </li>
+                    <li>
+                        <a href="https://openrouter.ai/" target="_blank">OpenRouter</a>
                     </li>
                 </ul>
             </nav>
@@ -163,6 +153,32 @@
         </footer>
 
         <script>
+            /**
+             * Theme toggle — dark mode default, light override
+             */
+            (function() {
+                const html = document.documentElement;
+                const stored = localStorage.getItem("theme");
+                if (stored === "light") {
+                    html.classList.add("light");
+                } else {
+                    html.classList.add("dark");
+                }
+                const btn = document.querySelector(".toggle-theme");
+                btn.addEventListener("click", () => {
+                    if (html.classList.contains("light")) {
+                        html.classList.replace("light", "dark");
+                        localStorage.setItem("theme", "dark");
+                        btn.textContent = "🌙";
+                    } else {
+                        html.classList.replace("dark", "light");
+                        localStorage.setItem("theme", "light");
+                        btn.textContent = "☀️";
+                    }
+                });
+            })();
+
+
             /**
              * Mengambil elemen refresh dari DOM
              * @type {HTMLElement}
@@ -238,7 +254,7 @@
                 }, 1000);
             }
         </script>
+        <script src="img-resize.js"></script>
     </body>
 
-    <script src="img-resize.js"></script>
 </html>
