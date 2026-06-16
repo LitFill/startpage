@@ -122,7 +122,7 @@
         >
         2023.
         <a
-          href="https://github.com/LitFill/startpage/tree/ver1"
+          href="https://github.com/LitFill/startpage"
           target="_blank"
           class="link"
           >link</a
@@ -200,7 +200,7 @@
       /**
        * Membuat interval update jam setiap 5 detik
        */
-      setInterval(updateClock, 5000);
+      setInterval(updateClock, 1000);
 
       /**
        * Fungsi untuk memformat waktu
@@ -215,17 +215,17 @@
        * Fungsi untuk mengupdate jam
        */
       function updateClock() {
-        const date = new Date();
-        jamElem.innerHTML = date.getHours();
-        menitElem.innerHTML = formatTimeValue(date.getMinutes());
-        detikElem.innerHTML = formatTimeValue(date.getSeconds());
+        const {hour, minute, second} = Temporal.Now.plainTimeISO();
+        jamElem.innerHTML = formatTimeValue(hour);
+        menitElem.innerHTML = formatTimeValue(minute);
+        detikElem.innerHTML = formatTimeValue(second);
       }
 
       /**
        * Fungsi untuk membersihkan input pada search box setelah 1 detik
        */
       function clearInput() {
-        const timeOut = setTimeout(() => {
+        return setTimeout(() => {
           const input = document.getElementById("q");
           input.value = "";
         }, 1000);
