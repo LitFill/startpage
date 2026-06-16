@@ -3,7 +3,7 @@
  * @type {string}
  */
 document.getElementById("image").style.height =
-    document.getElementById("links").offsetHeight + "px";
+  document.getElementById("links").offsetHeight + "px";
 
 /**
  * Elements with the .links class
