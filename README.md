@@ -4,8 +4,8 @@ Custom browser startpage — also works as a Chrome extension.
 
 ## Showcase
 
-| Dark mode (Mocha) | Light mode (Latte) |
-|---|---|
+| Dark mode (Mocha)                     | Light mode (Latte)                      |
+| ------------------------------------- | --------------------------------------- |
 | ![Dark](repo-assets/dark-preview.png) | ![Light](repo-assets/light-preview.png) |
 
 ## Features
