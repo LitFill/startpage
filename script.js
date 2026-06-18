@@ -1,86 +1,80 @@
 /**
  * Theme toggle — system-preference-aware, persisted in localStorage
  */
-(function () {
-  var html = document.documentElement;
-  var stored = localStorage.getItem("theme");
+((doc, store) => {
+  const html = doc.documentElement;
+  const stored = store.getItem("theme");
+  const btn = doc.querySelector(".toggle-theme");
 
-  function setTheme(isLight) {
-    if (isLight) {
-      html.classList.replace("dark", "light");
-      localStorage.setItem("theme", "light");
-    } else {
-      html.classList.replace("light", "dark");
-      localStorage.setItem("theme", "dark");
-    }
-    updateThemeImage(html.classList.contains("light"));
-  }
+  const setTheme = (isLight) => {
+    html.classList.toggle("light", isLight);
+    html.classList.toggle("dark", !isLight);
+    store.setItem("theme", isLight ? "light" : "dark");
+    const img = doc.getElementById("image");
+    if (img)
+      img.src = isLight
+        ? "repo-assets/img-light.webp"
+        : "repo-assets/img-dark.webp";
+  };
 
-  function updateThemeImage(isLight) {
-    var img = document.getElementById("image");
-    if (!img) return;
-    img.src = isLight
-      ? "repo-assets/img-light.webp"
-      : "repo-assets/img-dark.webp";
-  }
-
-  if (stored === "light") {
+  // Initial theme: prefer stored → system → dark
+  if (stored === "light") html.classList.add("light");
+  else if (stored === "dark") html.classList.add("dark");
+  else if (matchMedia("(prefers-color-scheme: light)").matches)
     html.classList.add("light");
-  } else if (stored === "dark") {
-    html.classList.add("dark");
-  } else if (matchMedia("(prefers-color-scheme: light)").matches) {
-    html.classList.add("light");
-  } else {
-    html.classList.add("dark");
-  }
+  else html.classList.add("dark");
 
-  var btn = document.querySelector(".toggle-theme");
-  btn.addEventListener("click", function () {
-    setTheme(!html.classList.contains("light"));
-    btn.textContent = html.classList.contains("light") ? "\u2600\uFE0F" : "\u{1F319}";
-  });
-
-  // Sync toggle button text and image on load
-  btn.textContent = html.classList.contains("light") ? "\u2600\uFE0F" : "\u{1F319}";
-  updateThemeImage(html.classList.contains("light"));
-})();
+  // Sync toggle button
+  btn.textContent = html.classList.contains("light")
+    ? "\u2600\uFE0F"
+    : "\u{1F319}";
+  btn.addEventListener("click", () =>
+    setTheme(!html.classList.contains("light")),
+  );
+})(document, localStorage);
 
 /**
  * Clock — live HH:MM:SS display
  */
-var jamElem = document.querySelector(".jam");
-var menitElem = document.querySelector(".menit");
-var detikElem = document.querySelector(".detik");
+const jam = document.querySelector(".jam");
+const menit = document.querySelector(".menit");
+const detik = document.querySelector(".detik");
 
-function formatTimeValue(value) {
-  return value < 10 ? "0" + value : value;
+const pad = (n) => `${n}`.padStart(2, "0");
+
+let prev = "";
+
+function tick() {
+  const { hour, minute, second } = Temporal.Now.plainTimeISO();
+  const hh = pad(hour),
+    mm = pad(minute),
+    ss = pad(second);
+  const hms = `${hh}:${mm}:${ss}`;
+
+  if (hms !== prev) {
+    jam.textContent = hh;
+    menit.textContent = mm;
+    detik.textContent = ss;
+    prev = hms;
+  }
+  requestAnimationFrame(tick);
 }
 
-function updateClock() {
-  var _a = Temporal.Now.plainTimeISO(), hour = _a.hour, minute = _a.minute, second = _a.second;
-  jamElem.innerHTML = formatTimeValue(hour);
-  menitElem.innerHTML = formatTimeValue(minute);
-  detikElem.innerHTML = formatTimeValue(second);
-}
-
-updateClock();
-setInterval(updateClock, 1000);
+tick();
 
 /**
  * Refresh page on click
  */
-document.querySelector(".refresh").addEventListener("click", function () {
-  return location.reload();
-});
+document
+  .querySelector(".refresh")
+  ?.addEventListener("click", () => location.reload());
 
 /**
  * Keyboard shortcuts
- *   / or Ctrl+K  → focus search
- *   Escape       → clear search, then blur
- *   1-4          → focus first link in link group N
  */
-document.addEventListener("keydown", function (e) {
-  var input = document.getElementById("q");
+document.addEventListener("keydown", (e) => {
+  const input = document.getElementById("q");
+  if (!input) return;
 
   // / or Ctrl+K → focus search
   if (e.key === "/" && e.target !== input) {
@@ -94,7 +88,7 @@ document.addEventListener("keydown", function (e) {
     return;
   }
 
-  // Escape → clear search value, then blur
+  // Escape → clear, then blur
   if (e.key === "Escape" && document.activeElement === input) {
     if (input.value) {
       input.value = "";
@@ -105,13 +99,17 @@ document.addEventListener("keydown", function (e) {
     return;
   }
 
-  // 1-4 → focus first link in link group N (only when search is not focused)
-  var n = parseInt(e.key, 10);
-  if (n >= 1 && n <= 4 && e.target !== input && !e.ctrlKey && !e.metaKey && !e.altKey) {
+  // 1-4 → focus first <a> in group N
+  const n = parseInt(e.key, 10);
+  if (
+    n >= 1 &&
+    n <= 4 &&
+    e.target !== input &&
+    !e.ctrlKey &&
+    !e.metaKey &&
+    !e.altKey
+  ) {
     e.preventDefault();
-    var uls = document.querySelectorAll("nav > ul");
-    var firstLink = uls[n - 1] && uls[n - 1].querySelector("a");
-    if (firstLink) firstLink.focus();
-    return;
+    document.querySelectorAll("nav > ul")[n - 1]?.querySelector("a")?.focus();
   }
 });

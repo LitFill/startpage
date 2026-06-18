@@ -48,7 +48,6 @@ html.light {
   --or: #d20f39;
 }
 
-
 /* ── Base ── */
 html {
   display: flex;
@@ -178,7 +177,6 @@ nav {
   padding: 1.2em 0;
 }
 
-
 .or {
   color: var(--or);
   font-weight: bold;
@@ -247,7 +245,6 @@ span.detik {
 .toggle-theme:hover {
   opacity: 1;
 }
-
 
 /* ── Responsive ── */
 @media (max-width: 1023px) {
