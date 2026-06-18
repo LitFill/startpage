@@ -112,7 +112,7 @@
       </div>
     </div>
 
-    <img id="image" class="image" />
+    <img id="image" class="image" src="repo-assets/img-dark.webp" alt="" />
 
     <footer>
       <p class="p-footer">
@@ -129,108 +129,6 @@
         >
       </p>
     </footer>
-
-    <script>
-      /**
-       * Theme toggle — dark mode default, light override
-       */
-      (function () {
-        const html = document.documentElement;
-        const stored = localStorage.getItem("theme");
-        if (stored === "light") {
-          html.classList.add("light");
-        } else {
-          html.classList.add("dark");
-        }
-        const btn = document.querySelector(".toggle-theme");
-        btn.addEventListener("click", () => {
-          if (html.classList.contains("light")) {
-            html.classList.replace("light", "dark");
-            localStorage.setItem("theme", "dark");
-            btn.textContent = "🌙";
-          } else {
-            html.classList.replace("dark", "light");
-            localStorage.setItem("theme", "light");
-            btn.textContent = "☀️";
-          }
-        });
-      })();
-
-      /**
-       * Mengambil elemen refresh dari DOM
-       * @type {HTMLElement}
-       */
-      const refreshElem = document.querySelector(".refresh");
-      /**
-       * Mengambil elemen jam dari DOM
-       * @type {HTMLElement}
-       */
-      const jamElem = document.querySelector(".jam");
-      /**
-       * Mengambil elemen menit dari DOM
-       * @type {HTMLElement}
-       */
-      const menitElem = document.querySelector(".menit");
-      /**
-       * Mengambil elemen detik dari DOM
-       * @type {HTMLElement}
-       */
-      const detikElem = document.querySelector(".detik");
-      /**
-       * Mengambil elemen search box dari DOM
-       * @type {HTMLElement}
-       */
-      const seacrBox = document.querySelector(".search-box");
-
-      /**
-       * Menambahkan event listener pada elemen refresh untuk melakukan refresh halaman
-       */
-      refreshElem.addEventListener("click", () => location.reload());
-
-      /**
-       * Menambahkan event listener pada search box untuk membersihkan input
-       */
-      seacrBox.addEventListener("submit", () => clearInput());
-
-      /**
-       * Memanggil fungsi update jam
-       */
-      updateClock();
-
-      /**
-       * Membuat interval update jam setiap 5 detik
-       */
-      setInterval(updateClock, 1000);
-
-      /**
-       * Fungsi untuk memformat waktu
-       * @param {number} value - Nilai yang akan diformat
-       * @return {string} - Nilai yang sudah diformat, jika nilai kurang dari 10 tambah 0 di depan
-       */
-      function formatTimeValue(value) {
-        return value < 10 ? "0" + value : value;
-      }
-
-      /**
-       * Fungsi untuk mengupdate jam
-       */
-      function updateClock() {
-        const {hour, minute, second} = Temporal.Now.plainTimeISO();
-        jamElem.innerHTML = formatTimeValue(hour);
-        menitElem.innerHTML = formatTimeValue(minute);
-        detikElem.innerHTML = formatTimeValue(second);
-      }
-
-      /**
-       * Fungsi untuk membersihkan input pada search box setelah 1 detik
-       */
-      function clearInput() {
-        return setTimeout(() => {
-          const input = document.getElementById("q");
-          input.value = "";
-        }, 1000);
-      }
-    </script>
-    <script src="img-resize.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
